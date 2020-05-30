@@ -1,8 +1,8 @@
-#Javascript Básico!
+# Javascript Básico!
 
 Criado está pasta para guardar os exercícios e práticas evolvendo Javascript básico.
 
-##Conceitos Aprendidos
+## Conceitos Aprendidos
 
 - Básico
   - Variáveis e dados
