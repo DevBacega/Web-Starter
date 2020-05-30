@@ -13,11 +13,13 @@ Criado está pasta para guardar os exercícios e práticas evolvendo Javascript 
   - Condição ternária
   - Estruturas de repetição
   - Intervalo e timeout
--  Manipulando DOM Básico
+  
+- Manipulando DOM Básico
   - Eventos inline
   - Trabalhando com a DOM
   - Lidando com elementos
   - Alterando estilos
+  
 - Ajax
   - Requisições AJAX
   - Promises
