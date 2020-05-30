@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+    </title>
+</head>
+<body>
+    <script>
+        var endereco = {
+            rua: "Av Rio das Pedras",
+            numero: 1000,
+            Bairro: "Piracicamirim",
+            Cidade: "Piracicaba",
+            UF: "SP"
+        };
+
+        function texto (endereco){
+            console.log('O usuário mora em ',endereco.Cidade,' / ',endereco.UF,' no bairro ',endereco.Bairro,', na rua "',endereco.rua,'" com nº',endereco.numero);
+        }
+
+        function pares(x,y){
+            var menor = (x < y) ? x : y;
+            var maior = (x > y) ? x : y;
+            
+            while(maior > menor){
+                if((maior%2) == 0){
+                    console.log(maior);
+                }
+                maior--;
+            }
+        }
+
+        function temHabilidade(skills){
+            return (skills.indexOf("Javascript",0) != -1) ? true : false;
+        }
+        var skills = ["ReactJS","Javascript","React Native"];
+        // console.log(temHabilidade(skills));
+
+        function experiencia(anos){
+            var experiencia;
+            switch (true){
+                case (anos < 2):
+                experiencia = "Iniciante";
+                break;
+                case (anos < 4):
+                experiencia = "Intermediario";
+                break;
+                case (anos < 7):
+                experiencia = "Avançado";
+                break;
+                case (anos > 6):
+                experiencia = "Jedi Master";
+                break;
+            }
+            console.log(experiencia);
+        }
+
+        var usuarios = [
+            {
+            nome: "Diego",
+            habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+            nome: "Gabriel",
+            habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+
+        function Arrays(usuarios){
+            for (usuario of usuarios)
+            {
+                console.log('O',usuario.nome,'possui as habilidades:',usuario.habilidades.join(','));
+            }
+        }
+
+
+
+    </script>
+</body>
+</html>

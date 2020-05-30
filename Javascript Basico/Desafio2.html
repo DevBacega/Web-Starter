@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body style="display:flex; flex-direction: column;">
+    
+    <div id="app" style="border:1px solid black; display: flex; flex-wrap: wrap; max-width: 450px;">
+        <button name="botao">Gerar Quadrado</button>
+    </div>
+
+    <div id="ListaUL" style=" border:1px solid black; display: flex; flex-wrap: wrap; flex-direction: column; max-width: 200px;">
+        <input name='ColocarItem' style="float:left;"/>
+        <button name="botaoLista" style="float:left;" onclick="PreencherLista()">Gerar Lista</button>
+        <ul name="lista">
+        </ul>
+        <button name="Limpar" style="float:left;">Limpar</button>
+    </div>
+    <script>
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+            for (var i = 0; i < 6; i++) {
+             color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        var click = 0;
+        var botao = document.querySelector('button[name="botao"]')
+
+        function MudarCor(numero){
+            var novaCor = getRandomColor();
+            var caixa = document.querySelector('#Caixa[title="'+numero+'"]');
+            console.log(caixa,novaCor,numero);
+            caixa.style.backgroundColor = novaCor;
+        }
+
+        botao.onclick = function(){
+            var boxElement = document.createElement('div');
+            boxElement.setAttribute('id','Caixa');
+            boxElement.setAttribute('title',click);
+            boxElement.setAttribute('onmouseover','MudarCor('+boxElement.title+')');
+            boxElement.style.width = '100px';
+            boxElement.style.height = '100px';
+            boxElement.style.backgroundColor = '#f00';
+           // boxElement.style.display = 'block';
+            boxElement.style.float = 'left';
+            boxElement.style.marginTop = '10px';
+            boxElement.style.marginLeft = '10px';
+            boxElement.style.marginBottom = '10px';
+            var containerArea = document.querySelector('#app');
+            containerArea.appendChild(boxElement);
+            click++;
+        }
+
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+
+       var botaoLista = document.querySelector('button[name="botaoLista"]');
+       var nomeImput = document.querySelector('input[name="ColocarItem"]');
+       var lisUL = document.querySelector('ul[name="lista"]')
+
+       function PreencherLista(){
+           
+                var nome = document.querySelector('input[name="ColocarItem"]');
+            if(nome.value != "")
+            {
+                
+                var list = document.createElement('li');
+                list.setAttribute('name',nome.value);
+                list.innerHTML = nome.value;
+                lisUL.appendChild(list);
+                nome.value = "";
+            }
+            else
+            {
+                alert("Coloque um nome!");
+            }
+       }
+
+       var botaoLimpar = document.querySelector('button[name="Limpar"]');
+
+       botaoLimpar.onclick = function(){ 
+                while(lisUL.firstChild) {
+                    lisUL.removeChild(lisUL.lastChild);
+                }
+               
+       }
+        
+
+    //    var linkElement = document.createElement('a');
+    //    linkElement.setAttribute('href', 'http://www.google.com.br')
+    //    linkElement.setAttribute('title', 'Site da Google')
+
+    //    var textElement = document.createTextNode('Acessar o Google');
+    //    linkElement.appendChild(textElement);
+
+    //    var containerElement = document.querySelector('#app');
+    //    containerElement.appendChild(linkElement);
+        
+    //    var inputElement = document.querySelector('#nome');
+    //    containerElement.removeChild(inputElement);
+    </script>
+</body>
+</html>
